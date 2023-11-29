@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplicationPA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplicationPA.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #191414; /* Cor de fundo do Spotify */
+            color: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0; /* Remova a margem padrão do body para ocupar toda a largura da tela */
+        }
+
+        header {
+            width: 100%;
+            background-color: #1DB954; /* Cor do cabeçalho do Spotify */
+            color: #FFFFFF; /* Cor do texto do cabeçalho */
+        }
+
+        .navbar-brand {
+            color: #FFFFFF; /* Cor do texto da marca no cabeçalho */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #FFFFFF; /* Cor do ícone do botão de alternância do menu */
+        }
+
+        .navbar-nav .nav-link {
+            color: #FFFFFF; /* Cor do texto dos links do menu */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #1DB954 ; /* Cor do texto dos links do menu ao passar o mouse */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #1DB954; /* Cor do rodapé do Spotify */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%; /* Largura total do rodapé */
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">WebApplicationPA</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Albums/Index">Albums</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - WebApplicationPA - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-J6eFQEOFJ6HxxuXhK+6Fd35RZBWyY51BqMlNiU6Gg1oXRP5Q/x5r3JDUx6IjcpN" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

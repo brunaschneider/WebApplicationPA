@@ -1,0 +1,55 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo - [Nome da Sua Aplicação]</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #191414;
+            color: #1DB954;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #fff; /* Cor verde do Spotify */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #1DB954;
+        }
+
+        a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4">Bem-vindo</h1>
+        <p>Saiba mais sobre <a href="https://docs.microsoft.com/aspnet/core">como construir aplicativos da Web com ASP.NET Core</a>.</p>
+    </div>
+
+</body>
+</html>

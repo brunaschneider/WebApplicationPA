@@ -1,0 +1,72 @@
+html {
+    font-size: 14px;
+    color: #1DB954;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    min-height: 100%;
+    margin-bottom: 60px;
+    background-color: #191414; /* Cor de fundo do Spotify */
+}
+
+@media (min-width: 768px) {
+    body {
+        margin-bottom: 0;
+    }
+}
+
+
+/*html {
+    font-size: 14px;
+    color: #1DB954;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    min-height: 100%;
+    background-color: #191414;  Cor de fundo do Spotify */
+}
+
+/*separacao
+
+html {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    margin-bottom: 60px;
+    background-color: #191414; /* Cor de fundo do Spotify 
+}
+*/
+
+@media (min-width: 768px) {
+    body {
+        margin-bottom: 0;
+    }
+}

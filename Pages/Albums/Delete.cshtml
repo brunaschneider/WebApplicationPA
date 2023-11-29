@@ -1,0 +1,93 @@
+﻿@page
+@using MySql.Data.MySqlClient;
+@model WebApplicationPA.Pages.Albums.DeleteModel;
+@using Microsoft.JSInterop;
+@using System;
+@using Microsoft.JSInterop;
+
+<script src="~/_framework/blazor.server.js"></script>
+
+@* Se existirem tracks *@
+@if (@Model.Tracks.Count > 0)
+{
+
+//Gambiarra para excluir 
+    <form method="POST">
+    <H2>Deseja excluir o album @Model.Album.AlbumName? Há @Model.Tracks.Count tracks atribuídas a ele.</H2>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancelar</a>
+        </div>
+    </div>
+
+    </form>
+
+}
+
+else
+{
+
+    Deletar();
+
+    redirecionar();
+
+}
+
+@{
+
+    //Está deletando o album inteiro, mas antes precisamos deletar as tracks atribuidas ao id do album, relação parent.
+void Deletar()
+        {
+
+            try
+
+            {
+
+                String id = Request.Query["id"];
+
+                string connectionString = "Server=localhost;Port=3306;Database=music;Uid=admin;Pwd=Senha13n;";
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+
+                {
+
+                    connection.Open();
+
+                    String sql = "DELETE FROM `albums` WHERE id = @id";
+
+                    using (MySqlCommand command = new MySqlCommand(sql, connection))
+
+                    {
+
+                        command.Parameters.AddWithValue("@id", id);
+
+                        command.ExecuteNonQuery();
+
+                    }
+
+                }
+
+            }
+
+            catch (Exception ex)
+
+            {
+
+            }
+
+            redirecionar();
+        }
+        
+        void redirecionar()
+        {
+
+            Response.Redirect("/Albums/Index");
+
+        }
+    }
+
+}
